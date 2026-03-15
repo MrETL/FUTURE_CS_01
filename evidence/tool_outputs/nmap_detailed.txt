@@ -1,0 +1,71 @@
+# Nmap 7.98 scan initiated Fri Mar 20 17:07:12 2026 as: /usr/lib/nmap/nmap --privileged -Pn -sV -sC -A -oN /home/outkold/FUTURE_CS_01/evidence/tool_outputs/nmap_detailed.txt demo.owasp-juice.shop
+Nmap scan report for demo.owasp-juice.shop (81.169.145.156)
+Host is up (0.10s latency).
+Other addresses for demo.owasp-juice.shop (not scanned): 2a01:238:20a:202:1156::
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE    VERSION
+21/tcp   open  ftp        ftpd.bin round-robin file server 3.4.0r16
+| ftp-syst: 
+|   STAT: 
+| Server status:
+|     Transfer mode: ASCII
+|     List mode:     UNIX
+|     Current number of users: 431
+|     Maximum number of users: 8364
+|     Idle timeout: 300 seconds
+|     Hostname: swh-live-ftp002
+|_End of server status.
+80/tcp   open  http-proxy F5 BIG-IP load balancer http proxy
+|_http-trane-info: Problem with XML parsing of /evox/about
+|_http-title: OWASP Juice Shop
+| http-robots.txt: 1 disallowed entry 
+|_/ftp
+| http-server-header: 
+|   BigIP
+|_  Heroku
+|_http-cors: HEAD GET POST DELETE PATCH
+443/tcp  open  ssl/http   Apache httpd 2.4.66 ((Unix))
+|_http-cors: HEAD GET PUT DELETE PATCH
+|_http-title: 400 Bad Request
+| http-server-header: 
+|   Apache/2.4.66 (Unix)
+|_  Heroku
+|_http-trane-info: Problem with XML parsing of /evox/about
+| ssl-cert: Subject: commonName=*.owasp-juice.shop
+| Subject Alternative Name: DNS:*.owasp-juice.shop, DNS:owasp-juice.shop
+| Not valid before: 2025-09-25T00:00:00
+|_Not valid after:  2026-10-16T23:59:59
+| http-robots.txt: 1 disallowed entry 
+|_/ftp
+8080/tcp open  http-proxy F5 BIG-IP load balancer http proxy
+|_http-title: OWASP Juice Shop
+| http-server-header: 
+|   BigIP
+|_  Heroku
+| http-robots.txt: 1 disallowed entry 
+|_/ftp
+|_http-cors: HEAD GET POST PUT DELETE PATCH
+Device type: phone
+Running (JUST GUESSING): Apple iOS 15.X|16.X|13.X (91%)
+OS CPE: cpe:/o:apple:iphone_os:15 cpe:/o:apple:iphone_os:16 cpe:/o:apple:iphone_os:13.7
+Aggressive OS guesses: Apple iOS 15.0 - 16.1 (Darwin 21.1.0 - 22.1.0) (91%), Apple iOS 15.4 (Darwin 21.4.0) (87%), Apple iOS 13.7 (Darwin 19.6.0) (87%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 16 hops
+Service Info: Device: load balancer
+
+TRACEROUTE (using port 22/tcp)
+HOP RTT       ADDRESS
+1   6.23 ms   172.20.10.1
+2   ...
+3   311.30 ms 10.224.231.33
+4   ... 5
+6   107.92 ms 10.1.41.2
+7   117.76 ms 10.1.41.5
+8   139.73 ms 41.79.199.113
+9   ... 10
+11  456.55 ms mei-b5-link.ip.twelve99.net (62.115.196.228)
+12  ... 15
+16  170.00 ms 81.169.145.156
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Mar 20 17:08:15 2026 -- 1 IP address (1 host up) scanned in 63.90 seconds
